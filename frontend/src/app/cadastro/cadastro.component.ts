@@ -19,7 +19,7 @@ export class CadastroComponent {
 
   constructor(private service: PacienteService) { }
 
-  public salvar(){
+  public gravar(){
     this.service.salvar(this.obj).subscribe({
         next:(data)=>{this.mensagem="cliente inserido com sucesso!";},
         error:(msg)=>{this.mensagem="ocorreu erro tente mais tarde!";}

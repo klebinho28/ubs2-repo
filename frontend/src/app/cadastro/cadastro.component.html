@@ -1,5 +1,129 @@
 <h1>Cadastro</h1>
-id:<input type="id" [(ngModel)]="obj.id"><br>
-nome:<input type="nome" [(ngModel)]="obj.nome"><br>
-cpf:<input type="cpf" [(ngModel)]="obj.cpf"><br>
-<button (click)="salvar();">Salvar</button>
+
+<div class="mb-3 mt-3">
+
+  <label for="nome">Nome Completo</label>
+  <div class="form-group">
+  <input id ="nome" class="form-control border-green input-large" placeholder="Digite seu Nome Completo"  type="text" [(ngModel)]="obj.nomeCompleto"/><br>
+  </div>
+
+  <label for="nomeSocial">Nome Social</label>
+  <div class="form-group">
+  <input id ="nome" class="form-control border-green input-large" placeholder = "Digite o nome social(se existe)" type="text" [(ngModel)]="obj.nomeSocial"/><br>
+  </div>
+</div>
+
+  <label for="nome">Nome da Mãe</label>
+  <div class="form-group">
+  <input id ="nome" class="form-control border-green input-large" placeholder = "Digite o Nome da Mãe" type="text" [(ngModel)]="obj.nomeMae"/><br>
+
+  <div class="form-group col-md-6">
+    <label for="nomepai">Nome do Pai</label>
+    <input id="nomePai" class="form-control" type="text" placeholder = "Digite o nome do Pai se (se existe)" [(ngModel)]="obj.nomePai"/><br>
+  </div>
+</div>
+
+<!--Dados de Nascimento-->
+<h4>Dados de Nascimento</h4>
+<hr>
+<label>Data de Nascimento</label>
+<div class="form-floating col-md-6">
+  <input id="dataNascimento" class="form-control" type="date" [(ngModel)]="obj.dataNascimento"/><br>
+</div>
+
+<h4>Sexo</h4>
+
+<div class="form-floating col-md-6">
+  <select id="sexo" class="form-control border-green input-large" placeholder = "Selecione.." [(ngModel)]="obj.sexo"><br>
+    <option value="" disabled>Selecione...</option>
+    <option value="Masculino">Masculino</option>
+    <option value="Feminino">Feminino</option>
+    <option value="Outros">Outros</option>
+  </select>
+</div>
+<hr>
+
+<!--Localidade-->
+
+<h4>Localidade</h4>
+<hr>
+<div class="mb-3 mt-3">
+  <!--Nacionalidade-->
+  <label>Nacionalidade</label>
+<div class="form-floating col-md-6">
+  <input id="nacionalidade" class="form-control border-green input-large" placeholder = "Digite sua Nacionalidade" type="text" [(ngModel)]="obj.nacionalidade" required /><br>
+  <small *ngIf="!obj.nacionalidade" class="text-danger">Campo obrigatório.</small>
+</div>
+
+<!--Municipio Nascimento-->
+<label for="municipioNascimento">Municipio Nascimento</label>
+<div class="form-floating col-md-6">
+  <input id="municipioNascimento" class="form-control" type="text" placeholder = "Digite seu Municipio de Nascimento" [(ngModel)]="obj.municipioNascimento"/>
+  <small *ngIf="!obj.municipioNascimento" class="text-danger">Campo obrigatório.</small>
+</div>
+</div>
+
+<!--Outros Dados-->
+<h4>Outros Dados</h4>
+<hr>
+<div class="mb-3 mt-3">
+  <!--RaçaCor-->
+  <label>Raça/Cor
+  </label>
+  <div class="form-floating col-md-6">
+    <select id="racaCor" class="form-control" [(ngModel)]="obj.racaCor" required>
+      <option value="" disabled selected>Selecione...</option>
+      <option value="Branca">Branca</option>
+      <option value="Preta">Preta</option>
+      <option value="Parda">Parda</option>
+      <option value="Amarela">Amarela</option>
+      <option value="Indígena">Indígena</option>
+    </select>
+    <small *ngIf="!obj.racaCor" class="text-danger">Campo obrigatório.</small>
+</div>
+<br>
+<br>
+
+<label for="frequentaEscola">Frequenta Escola</label>
+<div class="form-floating col-md-6">
+  <select id="frequentaEscola" class="form-control" [(ngModel)]="obj.frequentaEscola"><br>
+    <option value="" disabled selected>Selecione...</option>
+    <option value="Sim">Sim</option>
+    <option value="Não">Não</option>
+  </select>
+</div>
+</div>
+<br>
+
+ <!-- Dados de Contato -->
+ <h4>Dados de Contato</h4>
+ <hr>
+ <div class="mb-3 mt-3">
+   <!-- Celular -->
+   <label for="celular">Celular:</label>
+   <div class="form-floating col-md-4">
+     <input id="celular" class="form-control" placeholder = "Digite o número de Celular" type="tel" [(ngModel)]="obj.contatoCelular" required />
+     <small *ngIf="!obj.contatoCelular" class="text-danger">Campo obrigatório.</small>
+   </div>
+
+   <br>
+
+    <!-- Residencial -->
+    <label for="residencial">Telefone Residencial:</label>
+    <div class="form-floating col-md-4">
+      <input id="residencial" class="form-control" placeholder = "Digite o telefone Residencial" type="tel" [(ngModel)]="obj.contatoResidencial" />
+    </div>
+
+    <br>
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <div class="form-floating col-md-4">
+      <input id="email" class="form-control" type="email" placeholder = "Digite seu Email" [(ngModel)]="obj.contatoEmail" required />
+      <small *ngIf="!obj.contatoEmail" class="text-danger">Campo obrigatório.</small>
+    </div>
+  </div>
+
+  <br>
+
+  <button type="button" class="btn btn-success btn-lg" (click)="gravar();">Enviar</button>

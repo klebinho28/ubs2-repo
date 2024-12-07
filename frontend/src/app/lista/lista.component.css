@@ -1,0 +1,47 @@
+.table thead th {
+  background-color: #2AAC6B;
+  color: white;
+  text-align: left;
+}
+
+/* Linhas alternadas para o corpo da tabela */
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Efeito hover para as linhas da tabela */
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Botão "Pesquisar" personalizado */
+.btn-search {
+  background-color:  #2AAC6B;
+  color: white;
+  border: none;
+}
+
+.btn-search:hover {
+  background-color: #239E61;
+}
+
+/* Botões de ação dentro da tabela */
+.btn-edit {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+}
+
+.btn-edit:hover {
+  background-color: #0056b3;
+}
+
+.btn-remove {
+  background-color: #DC3545;
+  color: white;
+  border: none;
+}
+
+.btn-remove:hover {
+  background-color: #a71d2a;
+}

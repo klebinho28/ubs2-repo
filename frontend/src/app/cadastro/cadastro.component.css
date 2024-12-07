@@ -1,0 +1,23 @@
+/* Estilizar os campos de texto */
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    border: 2px solid #2AAC6B; /* Define a borda com a cor verde */
+    border-radius: 4px; /* Adiciona cantos arredondados */
+    padding: 8px; /* Ajusta o espaçamento interno */
+    outline: none; /* Remove o contorno padrão ao focar */
+}
+
+/* Alterar a borda ao focar nos campos */
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border: 3px solid #2AAC6B; /* Borda mais espessa ao focar */
+    box-shadow: 0 0 5px rgba(42, 172, 107, 0.5); /* Adiciona um brilho leve */
+}
