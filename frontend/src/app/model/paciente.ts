@@ -1,42 +1,44 @@
 export class Paciente {
 
-  public codigo:number = 0;
+  public codigo: number = 0;
 
-    public nomeCompleto: string = "";
-    public nomeSocial: string = "";
-    public nomeMae?:string = "";
-    public nomePai?:string = "";
+  // Informações pessoais
+  public nomeCompleto: string = ''; // Nome completo
+  public nomeSocial?: string; // Nome social (opcional)
+  public nomeMae?: string; // Nome da mãe (opcional)
+  public nomePai?: string; // Nome do pai (opcional)
 
-    public dataNascimento: Date = new Date();
-    public sexo: 'Masculino' | 'Feminino' | 'Outro' = 'Masculino'; // Sexo
+  // Dados de nascimento
+  public dataNascimento: Date = new Date(); // Data de nascimento
+  public sexo: 'Masculino' | 'Feminino' | 'Outro' = 'Masculino'; // Sexo
 
-    public nacionalidade:string="";
-    public municipioNascimento:string = "";
+  // Localidade
+  public nacionalidade: string = ''; // Nacionalidade
+  public municipioNascimento: string = ''; // Município de nascimento
 
-    public racaCor?: 'Branca' | 'Preta' | 'Parda' | 'Amarela' | 'Indígena' = 'Branca'; // Raça/Cor
-    public frequentaEscola?: 'Sim' | 'Não'; // Frequenta escola (opcional)
+  // Outros dados
+  public racaCor: 'Branca' | 'Preta' | 'Parda' | 'Amarela' | 'Indígena' = 'Branca'; // Raça/Cor
+  public frequentaEscola?: 'Sim' | 'Não'; // Frequenta escola (opcional)
 
-    public contatoCelular: string = "";
-    public contatoResidencial:string = "";
-    public contatoEmail:string = "";
+  // Dados de contato
+  public contatoCelular: string = ''; // Celular
+  public contatoResidencial?: string; // Telefone residencial (opcional)
+  public contatoEmail: string = ''; // Email
 
-    constructor(init?:Partial<Paciente>){
-      Object.assign(this, init);
-    }
+  constructor(init?: Partial<Paciente>) {
+    Object.assign(this, init);
   }
+}
 
-  const pacienteExemplo = new Paciente({
-
-    codigo:1,
-    nomeCompleto:'Carlos Silva',
-    dataNascimento: new Date('2005-11-01'),
-    sexo:'Masculino',
-    nacionalidade:'Brasileiro',
-    municipioNascimento:'São Paulo',
-    racaCor:'Branca',
-    contatoCelular:'11987654321',
-    contatoEmail: 'carlos.silva@example.com',
-
-  })
-
-
+// Exemplo de utilização
+const pacienteExemplo = new Paciente({
+  codigo: 1,
+  nomeCompleto: 'João Silva',
+  dataNascimento: new Date('2000-01-01'),
+  sexo: 'Masculino',
+  nacionalidade: 'Brasileira',
+  municipioNascimento: 'São Paulo',
+  racaCor: 'Parda',
+  contatoCelular: '11987654321',
+  contatoEmail: 'joao.silva@example.com',
+})

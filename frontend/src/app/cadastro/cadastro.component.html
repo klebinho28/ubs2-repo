@@ -4,22 +4,22 @@
 
   <label for="nome">Nome Completo</label>
   <div class="form-group">
-  <input id ="nome" class="form-control border-green input-large" placeholder="Digite seu Nome Completo"  type="text" [(ngModel)]="obj.nomeCompleto"/><br>
+  <input id ="nome" class="form-control border-green input-large" placeholder="Digite seu Nome Completo"  type="text" [(ngModel)]="paciente.nomeCompleto"/><br>
   </div>
 
   <label for="nomeSocial">Nome Social</label>
   <div class="form-group">
-  <input id ="nome" class="form-control border-green input-large" placeholder = "Digite o nome social(se existe)" type="text" [(ngModel)]="obj.nomeSocial"/><br>
+  <input id ="nome" class="form-control border-green input-large" placeholder = "Digite o nome social(se existe)" type="text" [(ngModel)]="paciente.nomeSocial"/><br>
   </div>
 </div>
 
   <label for="nome">Nome da Mãe</label>
   <div class="form-group">
-  <input id ="nome" class="form-control border-green input-large" placeholder = "Digite o Nome da Mãe" type="text" [(ngModel)]="obj.nomeMae"/><br>
+  <input id ="nome" class="form-control border-green input-large" placeholder = "Digite o Nome da Mãe" type="text" [(ngModel)]="paciente.nomeMae"/><br>
 
   <div class="form-group col-md-6">
     <label for="nomepai">Nome do Pai</label>
-    <input id="nomePai" class="form-control" type="text" placeholder = "Digite o nome do Pai se (se existe)" [(ngModel)]="obj.nomePai"/><br>
+    <input id="nomePai" class="form-control" type="text" placeholder = "Digite o nome do Pai se (se existe)" [(ngModel)]="paciente.nomePai"/><br>
   </div>
 </div>
 
@@ -28,13 +28,13 @@
 <hr>
 <label>Data de Nascimento</label>
 <div class="form-floating col-md-6">
-  <input id="dataNascimento" class="form-control" type="date" [(ngModel)]="obj.dataNascimento"/><br>
+  <input id="dataNascimento" class="form-control" type="date" [(ngModel)]="paciente.dataNascimento"/><br>
 </div>
 
 <h4>Sexo</h4>
 
 <div class="form-floating col-md-6">
-  <select id="sexo" class="form-control border-green input-large" placeholder = "Selecione.." [(ngModel)]="obj.sexo"><br>
+  <select id="sexo" class="form-control border-green input-large" placeholder = "Selecione.." [(ngModel)]="paciente.sexo"><br>
     <option value="" disabled>Selecione...</option>
     <option value="Masculino">Masculino</option>
     <option value="Feminino">Feminino</option>
@@ -51,15 +51,15 @@
   <!--Nacionalidade-->
   <label>Nacionalidade</label>
 <div class="form-floating col-md-6">
-  <input id="nacionalidade" class="form-control border-green input-large" placeholder = "Digite sua Nacionalidade" type="text" [(ngModel)]="obj.nacionalidade" required /><br>
-  <small *ngIf="!obj.nacionalidade" class="text-danger">Campo obrigatório.</small>
+  <input id="nacionalidade" class="form-control border-green input-large" placeholder = "Digite sua Nacionalidade" type="text" [(ngModel)]="paciente.nacionalidade" required /><br>
+  <small *ngIf="!paciente.nacionalidade" class="text-danger">Campo obrigatório.</small>
 </div>
 
 <!--Municipio Nascimento-->
 <label for="municipioNascimento">Municipio Nascimento</label>
 <div class="form-floating col-md-6">
-  <input id="municipioNascimento" class="form-control" type="text" placeholder = "Digite seu Municipio de Nascimento" [(ngModel)]="obj.municipioNascimento"/>
-  <small *ngIf="!obj.municipioNascimento" class="text-danger">Campo obrigatório.</small>
+  <input id="municipioNascimento" class="form-control" type="text" placeholder = "Digite seu Municipio de Nascimento" [(ngModel)]="paciente.municipioNascimento"/>
+  <small *ngIf="!paciente.municipioNascimento" class="text-danger">Campo obrigatório.</small>
 </div>
 </div>
 
@@ -71,7 +71,7 @@
   <label>Raça/Cor
   </label>
   <div class="form-floating col-md-6">
-    <select id="racaCor" class="form-control" [(ngModel)]="obj.racaCor" required>
+    <select id="racaCor" class="form-control" [(ngModel)]="paciente.racaCor" required>
       <option value="" disabled selected>Selecione...</option>
       <option value="Branca">Branca</option>
       <option value="Preta">Preta</option>
@@ -79,14 +79,14 @@
       <option value="Amarela">Amarela</option>
       <option value="Indígena">Indígena</option>
     </select>
-    <small *ngIf="!obj.racaCor" class="text-danger">Campo obrigatório.</small>
+    <small *ngIf="!paciente.racaCor" class="text-danger">Campo obrigatório.</small>
 </div>
 <br>
 <br>
 
 <label for="frequentaEscola">Frequenta Escola</label>
 <div class="form-floating col-md-6">
-  <select id="frequentaEscola" class="form-control" [(ngModel)]="obj.frequentaEscola"><br>
+  <select id="frequentaEscola" class="form-control" [(ngModel)]="paciente.frequentaEscola"><br>
     <option value="" disabled selected>Selecione...</option>
     <option value="Sim">Sim</option>
     <option value="Não">Não</option>
@@ -102,8 +102,8 @@
    <!-- Celular -->
    <label for="celular">Celular:</label>
    <div class="form-floating col-md-4">
-     <input id="celular" class="form-control" placeholder = "Digite o número de Celular" type="tel" [(ngModel)]="obj.contatoCelular" required />
-     <small *ngIf="!obj.contatoCelular" class="text-danger">Campo obrigatório.</small>
+     <input id="celular" class="form-control" placeholder = "Digite o número de Celular" type="tel" [(ngModel)]="paciente.contatoCelular" required />
+     <small *ngIf="!paciente.contatoCelular" class="text-danger">Campo obrigatório.</small>
    </div>
 
    <br>
@@ -111,7 +111,7 @@
     <!-- Residencial -->
     <label for="residencial">Telefone Residencial:</label>
     <div class="form-floating col-md-4">
-      <input id="residencial" class="form-control" placeholder = "Digite o telefone Residencial" type="tel" [(ngModel)]="obj.contatoResidencial" />
+      <input id="residencial" class="form-control" placeholder = "Digite o telefone Residencial" type="tel" [(ngModel)]="paciente.contatoResidencial" />
     </div>
 
     <br>
@@ -119,11 +119,12 @@
     <!-- Email -->
     <label for="email">Email:</label>
     <div class="form-floating col-md-4">
-      <input id="email" class="form-control" type="email" placeholder = "Digite seu Email" [(ngModel)]="obj.contatoEmail" required />
-      <small *ngIf="!obj.contatoEmail" class="text-danger">Campo obrigatório.</small>
+      <input id="email" class="form-control" type="email" placeholder = "Digite seu Email" [(ngModel)]="paciente.contatoEmail" required />
+      <small *ngIf="!paciente.contatoEmail" class="text-danger">Campo obrigatório.</small>
     </div>
   </div>
 
   <br>
 
-  <button type="button" class="btn btn-success btn-lg" (click)="gravar();">Enviar</button>
+  <button (click)="gravar();">Enviar</button>
+

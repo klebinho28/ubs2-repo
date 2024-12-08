@@ -1,8 +1,9 @@
+import { PacienteService } from "../service/paciente.service";
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Component } from '@angular/core';
 import { Paciente } from '../model/paciente';
-import { PacienteService } from '../service/paciente.service';
+
 
 @Component({
   selector: 'app-cadastro',
@@ -10,25 +11,47 @@ import { PacienteService } from '../service/paciente.service';
   imports: [CommonModule, FormsModule],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.css',
-  providers: [PacienteService]
+  providers : [PacienteService]
 })
 
 export class CadastroComponent {
-  public obj: Paciente = new Paciente();
-  public mensagem: string = "";
+  public paciente = new Paciente();
+ mensagem: string = '';
 
-  constructor(private service: PacienteService) { }
 
-  public gravar(){
-    this.service.salvar(this.obj).subscribe({
-        next:(data)=>{this.mensagem="cliente inserido com sucesso!";},
-        error:(msg)=>{this.mensagem="ocorreu erro tente mais tarde!";}
-     });
-     this.limpar();
+  constructor(private service: PacienteService) {}
+
+  // Método para gravar o paciente
+  public gravar() {
+    this.service.gravar(this.paciente).subscribe({
+      next: (data) => {
+        this.mensagem = "Paciente registrado com sucesso!";
+      },
+      error: (msg) => {
+        this.mensagem = "Ocorreu um erro, tente mais tarde.";
+      }
+    });
+    //this.limpar();
   }
 
-  public limpar(){
-    this.obj = new Paciente();
-  }
 
+  // Método para limpar o formulário
+  public limpar() {
+    this.paciente = {
+      codigo : 0,
+      nomeCompleto: '',
+      nomeSocial: '',
+      nomeMae: '',
+      nomePai: '',
+      dataNascimento: new Date,
+      sexo: 'Masculino',
+      nacionalidade: '',
+      municipioNascimento: '',
+      racaCor: 'Parda',
+      frequentaEscola: 'Sim',
+      contatoCelular: '',
+      contatoResidencial: '',
+      contatoEmail: ''
+    };
+  }
 }
